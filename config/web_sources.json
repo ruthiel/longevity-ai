@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Peter Attia MD - Longevity Course",
+    "author": "Peter Attia",
+    "urls": [
+      "https://peterattiamd.com/longevity-course/lesson1/",
+      "https://peterattiamd.com/longevity-course/lesson2/",
+      "https://peterattiamd.com/longevity-course/lesson3/",
+      "https://peterattiamd.com/longevity-course/lesson4/",
+      "https://peterattiamd.com/longevity-course/lesson5/",
+      "https://peterattiamd.com/longevity-course/lesson6/",
+      "https://peterattiamd.com/longevity-course/lesson7/",
+      "https://peterattiamd.com/longevity-course/lesson8/"
+    ],
+    "description": "Comprehensive course on the science of longevity.",
+    "category": "course",
+    "active": true
+  },
+  {
+    "name": "Peter Attia MD - Articles",
+    "author": "Peter Attia",
+    "urls": [
+      "https://peterattiamd.com/rem-sleep-and-alzheimers-disease-risk/",
+      "https://peterattiamd.com/fat-cell-memory/",
+      "https://peterattiamd.com/holistic-approach-to-chronic-back-pain/",
+      "https://peterattiamd.com/erectile-dysfunction-and-cardiovascular-health/",
+      "https://peterattiamd.com/creatine-and-depression/",
+      "https://peterattiamd.com/new-dietary-guidelines-for-americans/",
+      "https://peterattiamd.com/home-edits-for-reducing-microplastic-exposure/",
+      "https://peterattiamd.com/sleep-and-brain-health/",
+      "https://peterattiamd.com/obesity-and-autoimmune-disease/",
+      "https://peterattiamd.com/compounding-effects-of-metabolic-conditions-on-cardiovascular-risk/",
+      "https://peterattiamd.com/migraine-medications-for-endometriosis-treatment/",
+      "https://peterattiamd.com/exercise-for-improving-sleep/",
+      "https://peterattiamd.com/marginal-decade-spotlights/",
+      "https://peterattiamd.com/atomic-habits-for-health-goals/",
+      "https://peterattiamd.com/health-anxiety-and-mortality/",
+      "https://peterattiamd.com/hiit-and-cognitive-function/"
+    ],
+    "description": "Comprehensive course on the science of longevity.",
+    "category": "article",
+    "active": true
+  }
+]
