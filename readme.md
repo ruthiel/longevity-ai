@@ -1,134 +1,245 @@
-# AI-Powered Longevity Knowledge Assistant
+# 🚀 Longevity AI - Your AI-Powered Health & Longevity Coach
 
-[![Project Status](https://img.shields.io/badge/Status-Developing-yellow)](https://github.com/your-username/ai-longevity-coach)
-![Python](https://img.shields.io/badge/Python-3.x-blueviolet)
-![Langchain](https://img.shields.io/badge/Langchain-Latest-orange)
-![OpenAI](https://img.shields.io/badge/OpenAI-API-lightgrey)
-![Supabase](https://img.shields.io/badge/Supabase-VectorDB-green)
+An intelligent conversational AI application designed to provide evidence-based guidance on longevity, healthspan optimization, and wellness. Built with advanced RAG (Retrieval Augmented Generation) technology and powered by expert knowledge from leading longevity researchers.
 
-## Overview
+## ✨ Features
 
-The AI-Powered Longevity Knowledge Assistant is an intelligent application designed to provide users with evidence-based information and insights on how to live a longer and healthier life. By leveraging the power of Artificial Intelligence and a carefully curated knowledge base, this application acts as a personalized guide to longevity.
+### 🧠 **Intelligent Conversation**
+- **Context-Aware Chat**: Maintains conversation history for natural, flowing discussions
+- **Expert Knowledge**: Trained on content from Dr. Peter Attia, Dr. Gabrielle Lyon, and other longevity experts
+- **Personalized Responses**: Adapts answers based on conversation context and user needs
 
-At its core, the application utilizes the **Retrieval Augmented Generation (RAG)** framework. This sophisticated approach allows the system to answer user queries by first retrieving relevant information from a vast knowledge base and then using a Large Language Model (LLM) to generate comprehensive and contextually appropriate responses. This ensures that the information provided is not only informative but also grounded in credible sources.
+### 📚 **Comprehensive Knowledge Base**
+- **Book Summaries**: Key insights from "Outlive", "Forever Strong", and other longevity books
+- **Web Articles**: Curated content from trusted health and longevity websites
+- **Semantic Chunking**: Intelligent document splitting that preserves logical structure
+- **Rich Metadata**: Detailed source tracking and content categorization
 
-The knowledge base is constructed from a diverse range of authoritative materials covering various aspects of longevity, including:
+### 🎯 **Core Expertise Areas**
+- **Exercise & Training**: VO2 max, Zone 2 training, strength protocols, stability work
+- **Nutrition Science**: Evidence-based dietary strategies for metabolic health
+- **Sleep Optimization**: Protocols for improving sleep quality and duration
+- **Stress Management**: Techniques for mental health and resilience
+- **Disease Prevention**: Focus on the "Four Horsemen" of chronic disease
+- **Biomarkers**: Understanding key health metrics and their significance
 
-* **Exercise Science:** Optimal training methodologies, the benefits of different types of physical activity, and their impact on lifespan and healthspan.
-* **Sleep Hygiene:** Strategies for achieving high-quality sleep and its crucial role in physical and cognitive longevity.
-* **Nutritional Science:** Evidence-backed dietary recommendations, the impact of macronutrients and micronutrients, and optimal eating patterns for healthy aging.
-* **Supplementation Analysis:** Objective assessments of the efficacy and safety of various dietary supplements relevant to longevity.
-* **Stress Management Techniques:** Proven methods for reducing and managing stress and its detrimental effects on long-term health.
-* **Emerging Longevity Research:** Incorporating insights from the latest scientific studies and expert opinions in the field of aging.
+### 🛡️ **Safety & Ethics**
+- **Medical Disclaimers**: Clear boundaries on medical advice
+- **Evidence-Based**: Only recommendations supported by research
+- **European Units**: Metric system for all measurements
+- **Professional Standards**: Balanced, realistic health guidance
 
-The application aims to empower users with easily understandable and trustworthy information, enabling them to make informed decisions about their lifestyle and health choices to maximize their potential for a longer and healthier life.
+## 🛠️ Technologies Used
 
-## Table of Contents
+- **Python**: Core application development
+- **LangChain**: RAG pipeline and document processing
+- **OpenAI GPT-4**: Advanced language model for responses
+- **Gradio**: Interactive web interface
+- **Supabase + pgvector**: Vector database for semantic search
+- **Markdown Processing**: Intelligent content parsing and chunking
 
-* [Overview](#overview)
-* [Technologies Used](#technologies-used)
-* [Installation](#installation)
-* [Data Sources](#data-sources)
-* [How It Works](#how-it-works)
-* [Future Enhancements](#future-enhancements)
-* [Contributing](#contributing)
-* [Acknowledgments](#acknowledgments)
+## 📁 Project Structure
 
-## Technologies Used
+```
+longevity-ai/
+├── config/
+│   ├── system_message.txt      # AI personality and guidelines
+│   └── web_sources.json        # Curated web content sources
+├── downloads/
+│   └── books/                  # Book summaries in markdown format
+├── src/
+│   ├── document_loaders.py     # Content loading utilities
+│   └── vector_store_setup.py   # Database initialization
+├── app.py                      # Main Gradio application
+├── requirements.txt            # Python dependencies
+└── README.md                   # This file
+```
 
-* **Python:** The primary programming language for building the application's logic and integrating various components.
-* **Langchain:** A powerful framework for developing applications powered by Large Language Models, facilitating the implementation of the RAG pipeline.
-* **OpenAI:** Provides access to state-of-the-art Large Language Models (LLMs) used for generating intelligent and coherent responses.
-* **Supabase:** A scalable open-source alternative to Firebase, serving as the vector database to store and efficiently query embeddings of the knowledge base. The `pgvector` extension is utilized for vector similarity search.
-* **Document Loaders (Langchain):** Tools for ingesting data from various sources, such as web pages and potentially local files.
-* **Text Splitters (Langchain):** Algorithms for dividing large text documents into smaller, semantically meaningful chunks for embedding.
-* **Embeddings Models (OpenAI/Langchain):** Models used to create numerical vector representations (embeddings) of text data, enabling semantic search and retrieval.
-* **`supabase`:** The official Python client library for interacting with the Supabase backend.
-* **`python-dotenv`:** A library for managing sensitive configuration information (like API keys) using a `.env` file.
+## 🚀 Quick Start
 
-## Installation
+### Prerequisites
+- Python 3.8+
+- OpenAI API key
+- Supabase account (for vector database)
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/ai-longevity-coach.git](https://github.com/your-username/ai-longevity-coach.git)
-    cd ai-longevity-coach
-    ```
+### Installation
 
-2.  **Set up a virtual environment (recommended):**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On macOS/Linux
-    venv\Scripts\activate  # On Windows
-    ```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ruthiel/longevity-ai.git
+   cd longevity-ai
+   ```
 
-3.  **Install the required Python packages:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-    *(You may need to create the `requirements.txt` file first by running `pip freeze > requirements.txt` after installing the core dependencies.)*
+2. **Set up virtual environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On macOS/Linux
+   # or
+   venv\Scripts\activate     # On Windows
+   ```
 
-4.  **Configure environment variables:**
-    * Create a `.env` file in the root directory of the project.
-    * Add your OpenAI API key and Supabase project credentials to the `.env` file:
-        ```dotenv
-        OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
-        SUPABASE_URL_API="YOUR_SUPABASE_URL"
-        SUPABASE_KEY="YOUR_SUPABASE_ANON_KEY"
-        ```
-        * Replace the placeholder values with your actual API keys and Supabase project details. You can find your Supabase Project URL and anon key in your Supabase dashboard under Settings -> API.
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-5.  **Enable the `pgvector` extension in your Supabase project:**
-    * Navigate to your Supabase project's SQL Editor.
-    * Execute the following SQL command:
-        ```sql
-        create extension vector;
-        ```
+4. **Configure environment variables**
+   
+   Create a `.env` file in the root directory:
+   ```env
+   OPENAI_API_KEY="your_openai_api_key"
+   SUPABASE_URL_API="your_supabase_url"
+   SUPABASE_KEY="your_supabase_anon_key"
+   ```
 
-6.  **Create the necessary table in Supabase:**
-    * Use the SQL Editor to create a table (e.g., `longevity_knowledge`) to store the text chunks and their embeddings. Ensure it includes a `vector` column with the appropriate dimensions for your chosen embedding model.
-        ```sql
-        create table longevity_knowledge (
-            id bigserial primary key,
-            content text,
-            embedding vector(1536), -- Adjust dimension as needed
-            source text,
-            metadata jsonb
-        );
-        ```
+5. **Set up Supabase database**
+   
+   In your Supabase SQL Editor, run:
+   ```sql
+   -- Enable vector extension
+   create extension vector;
+   
+   -- Create documents table
+   create table longevity_knowledge (
+     id bigserial primary key,
+     content text,
+     embedding vector(1536),
+     source text,
+     metadata jsonb
+   );
+   
+   -- Create index for faster similarity search
+   create index on longevity_knowledge 
+   using ivfflat (embedding vector_cosine_ops)
+   with (lists = 100);
+   ```
 
-## Data Sources
+6. **Load knowledge base**
+   ```bash
+   python src/load_documents.py
+   ```
 
-The application's knowledge base is built upon information extracted from various credible sources, including:
+7. **Launch the application**
+   ```bash
+   python app.py
+   ```
 
-* **Podcasts:** Transcripts and summaries from leading health and longevity podcasts (e.g., The Peter Attia Drive, Huberman Lab Podcast, Zoe Science & Nutrition).
-* **Articles:** Peer-reviewed scientific articles and reputable health publications focusing on longevity research.
-* **Book Excerpts:** Key insights and information from authoritative books on longevity, exercise, nutrition, sleep, and stress management (e.g., "Outlive" by Peter Attia, works by Gabrielle Lyon).
-* **Website Content:** Information from the official websites of renowned longevity experts and research institutions.
+   The app will be available at `http://localhost:7860`
 
-Efforts are made to ensure that all data sources are scientifically sound and legally accessible.
+## 📖 Knowledge Sources
 
-## How It Works
+Our knowledge base includes carefully curated content from:
 
-1.  **Data Ingestion:** Relevant content from the identified sources is loaded into the system using Langchain's document loaders.
-2.  **Text Chunking:** Large pieces of text are divided into smaller, semantically coherent chunks using Langchain's text splitters.
-3.  **Embedding Generation:** Each text chunk is converted into a high-dimensional vector embedding using OpenAI's embedding models. These embeddings capture the semantic meaning of the text.
-4.  **Vector Storage:** The text chunks and their corresponding embeddings are stored in the Supabase vector database. Metadata about the source of each chunk is also stored.
-5.  **User Query:** When a user asks a question related to longevity, their query is also converted into an embedding vector using the same embedding model.
-6.  **Retrieval:** The system performs a similarity search in the Supabase vector database to find the text chunks whose embeddings are most semantically similar to the user's query embedding.
-7.  **Response Generation:** The retrieved text chunks, along with the user's query, are passed to the OpenAI LLM. The LLM uses this context to generate a comprehensive and informative answer.
+### 📚 **Books**
+- "Outlive" by Dr. Peter Attia - Comprehensive longevity framework
+- "Forever Strong" by Dr. Gabrielle Lyon - Muscle-centric health approach
+- Additional longevity and health optimization books
 
-## Future Enhancements
+### 🌐 **Web Content**
+- Expert websites and research institutions
+- Peer-reviewed articles and studies
+- Trusted health and longevity publications
 
-* **User Data Integration:** Allow users to input personal health data to further personalize recommendations.
-* **Multi-Modality Support:** Incorporate information from images, videos, and other media.
-* **Fine-tuning the LLM:** Potentially fine-tune the base LLM on the specific domain of longevity for improved accuracy and style.
-* **User Interface Development:** Build a user-friendly web or mobile interface for easier interaction.
-* **Source Citation:** Provide citations to the specific sources used to generate each answer.
-* **More Sophisticated Retrieval Strategies:** Explore advanced retrieval techniques to improve the relevance of retrieved information.
+### 🎙️ **Podcasts & Transcripts**
+- The Peter Attia Drive
+- Huberman Lab
+- Other leading health and science podcasts
 
-## Acknowledgments
+## 💡 Usage Examples
 
-* The developers of Langchain for providing a powerful framework for building LLM applications.
-* OpenAI for their advanced language models and embedding services.
-* The Supabase team for their excellent open-source backend platform and vector database capabilities.
-* The experts and creators of the valuable content that forms the knowledge base of this application.
+### Basic Health Questions
+```
+User: "How can I improve my sleep quality?"
+AI: "Great question! Sleep is one of the fundamental pillars of longevity 😴
+
+Quality sleep optimization involves several key strategies:
+• Sleep hygiene protocols 🌙
+• Temperature regulation (16-19°C optimal)
+• Light exposure management
+• Stress reduction techniques
+
+[Detailed evidence-based recommendations follow...]"
+```
+
+### Follow-up Context
+```
+User: "What supplements help with that?"
+AI: "For sleep optimization specifically, here are evidence-backed supplements:
+• Magnesium glycinate (200-400mg before bed)
+• Melatonin (0.5-3mg, 30-60 minutes before sleep)
+• L-theanine (100-200mg for relaxation)
+
+[Context-aware response continues...]"
+```
+
+## 🔧 Advanced Features
+
+### **Intelligent Document Processing**
+- **Semantic Chunking**: Preserves logical document structure
+- **Metadata Enrichment**: Tracks source, author, section, and processing details
+- **Context-Aware Retrieval**: Uses conversation history for better search results
+
+### **Conversation Management**
+- **Memory Limitation**: Configurable history length to manage token usage
+- **Context Continuity**: References previous topics naturally
+- **Source Attribution**: Transparent about information sources
+
+## 🔮 Roadmap
+
+### **Near Term**
+- [ ] Enhanced source citation display
+- [ ] User preference customization
+- [ ] Mobile-responsive interface improvements
+- [ ] Additional expert content integration
+
+### **Future Enhancements**
+- [ ] Personal health data integration
+- [ ] Custom protocol generation
+- [ ] Multi-language support
+- [ ] API endpoints for third-party integration
+- [ ] Advanced analytics and insights
+
+## 🤝 Contributing
+
+We welcome contributions to improve Longevity AI! Please:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### **Content Contributions**
+- High-quality, evidence-based health content
+- Expert interviews and summaries
+- Research paper summaries
+- Protocol documentation
+
+## ⚖️ Disclaimer
+
+**Important**: This application provides educational information only and is not intended as medical advice. Always consult with qualified healthcare professionals before making any health-related decisions or changes to your lifestyle.
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+- **Dr. Peter Attia** - For groundbreaking longevity research and protocols
+- **Dr. Gabrielle Lyon** - For muscle-centric health insights
+- **LangChain Community** - For excellent RAG framework tools
+- **OpenAI** - For advanced language model capabilities
+- **Supabase Team** - For vector database infrastructure
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📧 Contact
+
+**Ruthiel Trevisan** - [@ruthiel](https://github.com/ruthiel)
+
+Project Link: [https://github.com/ruthiel/longevity-ai](https://github.com/ruthiel/longevity-ai)
+
+---
+
+**🌟 Star this repository if you find it helpful! 🌟**
+
+*Building the future of personalized longevity guidance, one conversation at a time.*
