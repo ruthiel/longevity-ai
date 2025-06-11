@@ -5,17 +5,20 @@ An intelligent conversational AI application designed to provide evidence-based 
 ## ✨ Features
 
 ### 🧠 **Intelligent Conversation**
+
 - **Context-Aware Chat**: Maintains conversation history for natural, flowing discussions
 - **Expert Knowledge**: Trained on content from Dr. Peter Attia, Dr. Gabrielle Lyon, and other longevity experts
 - **Personalized Responses**: Adapts answers based on conversation context and user needs
 
 ### 📚 **Comprehensive Knowledge Base**
+
 - **Book Summaries**: Key insights from "Outlive", "Forever Strong", and other longevity books
 - **Web Articles**: Curated content from trusted health and longevity websites
 - **Semantic Chunking**: Intelligent document splitting that preserves logical structure
 - **Rich Metadata**: Detailed source tracking and content categorization
 
 ### 🎯 **Core Expertise Areas**
+
 - **Exercise & Training**: VO2 max, Zone 2 training, strength protocols, stability work
 - **Nutrition Science**: Evidence-based dietary strategies for metabolic health
 - **Sleep Optimization**: Protocols for improving sleep quality and duration
@@ -24,6 +27,7 @@ An intelligent conversational AI application designed to provide evidence-based 
 - **Biomarkers**: Understanding key health metrics and their significance
 
 ### 🛡️ **Safety & Ethics**
+
 - **Medical Disclaimers**: Clear boundaries on medical advice
 - **Evidence-Based**: Only recommendations supported by research
 - **European Units**: Metric system for all measurements
@@ -58,96 +62,79 @@ longevity-ai/
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.8+
+
+- Docker and Docker Compose installed
+- Git
 - OpenAI API key
 - Supabase account (for vector database)
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/ruthiel/longevity-ai.git
-   cd longevity-ai
-   ```
+**1. Clone and Start (2 commands!)**
+```bash
+# Clone and enter the project
+git clone https://github.com/ruthiel/longevity-ai.git
+cd longevity-ai
 
-2. **Set up virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On macOS/Linux
-   # or
-   venv\Scripts\activate     # On Windows
-   ```
+# Start the application
+docker-compose up --build
+```
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+**2. Configure environment variables**
 
-4. **Configure environment variables**
-   
-   Create a `.env` file in the root directory:
-   ```env
-   OPENAI_API_KEY="your_openai_api_key"
-   SUPABASE_URL_API="your_supabase_url"
-   SUPABASE_KEY="your_supabase_anon_key"
-   ```
+Create a `.env` file in the root directory:
+```env
+OPENAI_API_KEY=your_openai_api_key
+SUPABASE_URL_API=your_supabase_url
+SUPABASE_KEY=your_supabase_anon_key
+```
 
-5. **Set up Supabase database**
-   
-   In your Supabase SQL Editor, run:
-   ```sql
-   -- Enable vector extension
-   create extension vector;
-   
-   -- Create documents table
-   create table longevity_knowledge (
-     id bigserial primary key,
-     content text,
-     embedding vector(1536),
-     source text,
-     metadata jsonb
-   );
-   
-   -- Create index for faster similarity search
-   create index on longevity_knowledge 
-   using ivfflat (embedding vector_cosine_ops)
-   with (lists = 100);
-   ```
+**3. Set up Supabase database**
 
-6. **Load knowledge base**
-   ```bash
-   python src/load_documents.py
-   ```
+In your Supabase SQL Editor, run:
+```sql
+-- Enable vector extension
+create extension vector;
 
-7. **Launch the application**
-   ```bash
-   python app.py
-   ```
+-- Create documents table
+create table longevity_knowledge (
+  id bigserial primary key,
+  content text,
+  embedding vector(1536),
+  source text,
+  metadata jsonb
+);
 
-   The app will be available at `http://localhost:7860`
+-- Create index for faster similarity search
+create index on longevity_knowledge 
+using ivfflat (embedding vector_cosine_ops)
+with (lists = 100);
+```
+
+**4. Access the application**
+
+Open your browser and go to: **http://localhost:8888**
 
 ## 📖 Knowledge Sources
 
 Our knowledge base includes carefully curated content from:
 
 ### 📚 **Books**
+
 - "Outlive" by Dr. Peter Attia - Comprehensive longevity framework
 - "Forever Strong" by Dr. Gabrielle Lyon - Muscle-centric health approach
 - Additional longevity and health optimization books
 
 ### 🌐 **Web Content**
+
 - Expert websites and research institutions
 - Peer-reviewed articles and studies
 - Trusted health and longevity publications
 
-### 🎙️ **Podcasts & Transcripts**
-- The Peter Attia Drive
-- Huberman Lab
-- Other leading health and science podcasts
-
 ## 💡 Usage Examples
 
 ### Basic Health Questions
+
 ```
 User: "How can I improve my sleep quality?"
 AI: "Great question! Sleep is one of the fundamental pillars of longevity 😴
@@ -162,6 +149,7 @@ Quality sleep optimization involves several key strategies:
 ```
 
 ### Follow-up Context
+
 ```
 User: "What supplements help with that?"
 AI: "For sleep optimization specifically, here are evidence-backed supplements:
@@ -175,11 +163,13 @@ AI: "For sleep optimization specifically, here are evidence-backed supplements:
 ## 🔧 Advanced Features
 
 ### **Intelligent Document Processing**
+
 - **Semantic Chunking**: Preserves logical document structure
 - **Metadata Enrichment**: Tracks source, author, section, and processing details
 - **Context-Aware Retrieval**: Uses conversation history for better search results
 
 ### **Conversation Management**
+
 - **Memory Limitation**: Configurable history length to manage token usage
 - **Context Continuity**: References previous topics naturally
 - **Source Attribution**: Transparent about information sources
@@ -187,12 +177,14 @@ AI: "For sleep optimization specifically, here are evidence-backed supplements:
 ## 🔮 Roadmap
 
 ### **Near Term**
+
 - [ ] Enhanced source citation display
 - [ ] User preference customization
 - [ ] Mobile-responsive interface improvements
 - [ ] Additional expert content integration
 
 ### **Future Enhancements**
+
 - [ ] Personal health data integration
 - [ ] Custom protocol generation
 - [ ] Multi-language support
@@ -210,10 +202,17 @@ We welcome contributions to improve Longevity AI! Please:
 5. Open a Pull Request
 
 ### **Content Contributions**
+
 - High-quality, evidence-based health content
 - Expert interviews and summaries
 - Research paper summaries
 - Protocol documentation
+
+## 🛠️ Stop the Application
+
+```bash
+docker-compose down
+```
 
 ## ⚖️ Disclaimer
 
@@ -222,6 +221,7 @@ We welcome contributions to improve Longevity AI! Please:
 ## 🙏 Acknowledgments
 
 Special thanks to:
+
 - **Dr. Peter Attia** - For groundbreaking longevity research and protocols
 - **Dr. Gabrielle Lyon** - For muscle-centric health insights
 - **LangChain Community** - For excellent RAG framework tools
